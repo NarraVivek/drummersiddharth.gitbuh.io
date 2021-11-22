@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="section">
+    <div class="container">
+
+      <div>
+        <h2 style="text-align: center; margin-top: 60px;">
+            Print Media
+            <br>
+            <small>English</small>
+        </h2>
+      </div>
+
+      <div class="image-row">
+        <div class="image-column" *ngFor="let image of images; let i = index">
+          <img src="{{image.thumbnail}}" (click)="openModal();currentSlide(i+1)" class="hover-shadow cursor">
+        </div>
+      </div>
+      <div id="imgModal" class="slide-modal" style="display: block;margin-top: 45px;">
+        
+        <div class="slide-modal-content">
+            <div class="img-slides" *ngFor="let image of images; let i = index">
+                <img src="{{image.url}}">
+            </div>
+            <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+            <a class="next" (click)="plusSlides(1)">&#10095;</a>
+            <span class="close cursor" (click)="closeModal()">&times;</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

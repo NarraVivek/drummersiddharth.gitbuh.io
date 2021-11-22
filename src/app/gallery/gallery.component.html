@@ -1,0 +1,135 @@
+<div class="wrapper">
+  <div class="section">
+    <div class="container">
+
+      <div>
+        <h2 style="text-align: center; margin-top: 60px;">
+            Gallery
+        </h2>
+      </div>
+
+      <div class="col-md-12 ml-auto col-xl-12 mr-auto">
+
+        <!-- Tabs with Background on Card -->
+        <div class="card">
+
+          <div class="nav-tabs-navigation" data-tabs-color="orange">
+              <div class="nav-tabs-wrapper">
+                  <ngb-tabset [justify]="'center'" class="text-center" >
+
+                      <ngb-tab title="Personalities">
+                        <ng-template ngbTabContent>
+                          <div class="image-row">
+                            <div class="image-column" *ngFor="let image of personalitiesImages; let i = index">
+                                <img src="{{image.url}}" (click)="openModal();currentSlide(i+1)" class="hover-shadow cursor">
+                            </div>
+                          </div>
+                          <div id="imgModal" class="slide-modal">
+                            <div class="slide-modal-content">
+                                <div class="img-slides" *ngFor="let image of personalitiesImages; let i = index">
+                                    <img src="{{image.url}}">
+                                </div>
+                                <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+                                <a class="next" (click)="plusSlides(1)">&#10095;</a>
+                                <span class="close cursor" (click)="closeModal()">&times;</span>
+                                <div class="image-row">
+                                    <div class="image-column" *ngFor="let image of personalitiesImages; let i = index">
+                                        <img class="images" (click)="currentSlide(i+1)" src="{{image.url}}">
+                                    </div>
+                                    <button class="btn btn-lg button-center" (click)="closeModal()">Close</button>
+                                </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </ngb-tab>
+
+                      <ngb-tab title="Concerts">
+                        <ng-template ngbTabContent>
+                          <div class="image-row">
+                            <div class="image-column" *ngFor="let image of concertsImages; let i = index">
+                                <img src="{{image.url}}" (click)="openModal();currentSlide(i+1)" class="hover-shadow cursor">
+                            </div>
+                          </div>
+                          <div id="imgModal" class="slide-modal">
+                            <div class="slide-modal-content">
+                                <div class="img-slides" *ngFor="let image of concertsImages; let i = index">
+                                    <img src="{{image.url}}">
+                                </div>
+                                <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+                                <a class="next" (click)="plusSlides(1)">&#10095;</a>
+                                <span class="close cursor" (click)="closeModal()">&times;</span>
+                                <div class="image-row">
+                                    <div class="image-column" *ngFor="let image of concertsImages; let i = index">
+                                        <img class="images" (click)="currentSlide(i+1)" src="{{image.url}}">
+                                    </div>
+                                    <button class="btn btn-lg button-center" (click)="closeModal()">Close</button>
+                                </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </ngb-tab>
+
+                      <ngb-tab title="Awards">
+                        <ng-template ngbTabContent>
+                          <div class="image-row">
+                            <div class="image-column" *ngFor="let awardsImage of awardsImages; let i = index">
+                                <img src="{{awardsImage.url}}" (click)="openModal();currentSlide(i+1)" class="hover-shadow cursor">
+                            </div>
+                          </div>
+                          <div id="imgModal" class="slide-modal">
+                            <div class="slide-modal-content">
+                                <div class="img-slides" *ngFor="let awardsImage of awardsImages; let i = index">
+                                    <img src="{{awardsImage.url}}">
+                                </div>
+                                <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+                                <a class="next" (click)="plusSlides(1)">&#10095;</a>
+                                <span class="close cursor" (click)="closeModal()">&times;</span>
+                                <div class="image-row">
+                                    <div class="image-column" *ngFor="let awardsImage of awardsImages; let i = index">
+                                        <img class="images" (click)="currentSlide(i+1)" src="{{awardsImage.url}}">
+                                    </div>
+                                    <button class="btn btn-lg button-center" (click)="closeModal()">Close</button>
+                                </div>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </ngb-tab>
+
+                      <ngb-tab title="Personal">
+                          <ng-template ngbTabContent>
+                            <div class="image-row">
+                              <div class="image-column" *ngFor="let image of personalImages; let i = index">
+                                  <img src="{{image.url}}" (click)="openModal();currentSlide(i+1)" class="hover-shadow cursor">
+                              </div>
+                            </div>
+                            <div id="imgModal" class="slide-modal">
+                              <div class="slide-modal-content">
+                                  <div class="img-slides" *ngFor="let image of personalImages; let i = index">
+                                      <img src="{{image.url}}">
+                                  </div>
+                                  <a class="prev" (click)="plusSlides(-1)">&#10094;</a>
+                                  <a class="next" (click)="plusSlides(1)">&#10095;</a>
+                                  <span class="close cursor" (click)="closeModal()">&times;</span>
+                                  <div class="image-row">
+                                      <div class="image-column" *ngFor="let image of personalImages; let i = index">
+                                          <img class="images" (click)="currentSlide(i+1)" src="{{image.url}}">
+                                      </div>
+                                      <button class="btn btn-lg button-center" (click)="closeModal()">Close</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </ng-template>
+                      </ngb-tab>
+                    
+                  </ngb-tabset>
+              </div>
+          </div>
+
+        </div>
+        <!-- End Tabs on plain Card -->
+      </div>
+      
+    </div>
+  </div>
+</div>
+
